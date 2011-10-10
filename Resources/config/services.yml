@@ -1,0 +1,7 @@
+parameters:
+#    drymek_pheanstalk.example.class: drymek\PheanstalkBundle\Example
+
+services:
+#    drymek_pheanstalk.example:
+#        class: %drymek_pheanstalk.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
