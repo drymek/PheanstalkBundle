@@ -1,15 +1,15 @@
 ## Service:
-========
 
 Get the Pheanstalk object to work with:
+
 ```
 $this->get('pheanstalk');
 ```
 
 ## Developers tools:
-=================
 
 Add to your app/config/routing_dev.yml
+
 ```
 _pheanstalk:
     resource: "@drymekPheanstalkBundle/Resources/config/routing.yml"
@@ -17,7 +17,6 @@ _pheanstalk:
 ```
 
 ## Developers tools features:
-==========================
 
 * List tubes 
 * Show tube statistics
@@ -26,7 +25,7 @@ _pheanstalk:
 * Delete jobs
 
 ## Usage example:
-========
+
 ```
 $pheanstalk = $this->get('pheanstalk');
 
