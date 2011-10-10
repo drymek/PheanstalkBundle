@@ -31,6 +31,8 @@ $loader->registerNamespaces(array(
     'drymek'           => __DIR__.'/../vendor/drymek',
 ));
 
+```
+
 ## Service:
 
 Get the Pheanstalk object to work with:
