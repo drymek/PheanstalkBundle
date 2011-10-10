@@ -1,3 +1,36 @@
+## Install:
+
+deps:
+
+```
+[Pheanstalk]
+    git=https://github.com/mrpoundsign/pheanstalk.git
+    target=/pheanstalk
+
+[drymekPheanstalkBundle]
+    git=https://github.com/drymek/PheanstalkBundle.git
+    target=/bundles/drymek/PheanstalkBundle
+```
+
+app/AppKernel.php
+
+```
+        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            // (...)
+            $bundles[] = new drymek\PheanstalkBundle\drymekPheanstalkBundle();
+        }
+```
+
+app/autoload.php
+
+```
+
+$loader->registerNamespaces(array(
+    // (...)
+    'Pheanstalk'       => __DIR__.'/../vendor/pheanstalk/classes',
+    'drymek'           => __DIR__.'/../vendor/drymek',
+));
+
 ## Service:
 
 Get the Pheanstalk object to work with:
