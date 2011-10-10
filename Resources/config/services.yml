@@ -1,7 +1,8 @@
 parameters:
-#    drymek_pheanstalk.example.class: drymek\PheanstalkBundle\Example
+    pheanstalk.class: Pheanstalk\Pheanstalk
+    pheanstalk.server: 127.0.0.1
 
 services:
-#    drymek_pheanstalk.example:
-#        class: %drymek_pheanstalk.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    pheanstalk:
+        class: %pheanstalk.class%
+        arguments: [%pheanstalk.server%]

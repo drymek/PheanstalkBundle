@@ -1,0 +1,22 @@
+<table>
+    <tbody>
+        {% for tube in tubes %}
+            <tr>
+                <td>
+                    {{ tube }}
+                </td>
+                <td>
+                    <a href="{{ path('drymekPheanstalkBundle_tubeshow', {'name': tube}) }}">show</a>
+                    <a href="{{ path('drymekPheanstalkBundle_tubeput', {'name' : tube}) }}">put</a>
+                    <a href="{{ path('drymekPheanstalkBundle_tubejobs', {'name' : tube}) }}">jobs</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    <thead>
+        <tr>
+            <th>Tube name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
