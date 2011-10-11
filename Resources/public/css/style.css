@@ -1,0 +1,147 @@
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+html, body
+{
+    background-color: #EFEFEF;
+}
+
+body
+{
+    font-size:        14px;
+    font-family:      "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    color:            #313131;
+}
+
+a
+{
+    color:           #08C;
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+
+#symfony-wrapper
+{
+    width:  970px;
+    margin: 0 auto;
+}
+
+#symfony-header
+{
+    position: relative;
+    padding: 30px 30px 20px 30px;
+}
+
+.symfony-content
+{
+    background-color:           white;
+    border:                     1px solid #DFDFDF;
+    padding:                    50px;
+    -moz-border-radius:         16px;
+    -webkit-border-radius:      16px;
+    border-radius:              16px;
+    margin-bottom:              20px;
+    word-wrap:                  break-word;
+}
+
+h1, h2, h3
+{
+    font-family:    Georgia, "Times New Roman", Times, serif;
+    color:          #404040;
+}
+
+h1
+{
+    font-size:      45px;
+    padding-bottom: 30px;
+}
+
+h2
+{
+    font-weight:   bold;
+    color:         #FFFFFF;
+    /* Font is duplicated of body (sans-serif) */
+    font-family:      "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+
+    margin-bottom:    10px;
+    background-color: #5185d5;
+    padding:          2px 12px;
+    margin:           25px 5px 10px 5px;
+    display:          inline-block;
+    text-transform:   uppercase;
+
+}
+
+th, strong
+{
+    font-weight: bold;
+}
+
+tr.odd 
+{
+    background-color: #f9f9f9;
+}
+
+table td, table th 
+{
+    padding: 2px 8px;
+}
+
+table tr
+{
+    border-bottom: 1px solid #494949;
+}
+
+tr.even 
+{
+    
+}
+
+p
+{
+    line-height:    20px;
+    padding-bottom: 20px;
+}
+
+div.left
+{
+    float: left;
+}
+
+div.right
+{
+    float: right;
+}
+
+div.clear
+{
+    clear: both;
+}
+
+div.links
+{
+    padding: 10px;
+}
+
+label
+{
+    padding: 10px;
+}
+
+input.button
+{
+    color:         #000;
+    /* Font is duplicated of body (sans-serif) */
+
+    margin-bottom:    10px;
+    background-color: #a3bfe9;
+    padding:          2px 12px;
+    margin:           25px 5px 10px 5px;
+    border:           1px solid #DFDFDF;
+    display:          inline-block;
+    text-transform:   uppercase;
+}

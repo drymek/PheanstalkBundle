@@ -1,5 +1,17 @@
-<form action="{{ path('drymekPheanstalkBundle_tubeput', {'name': name}) }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
+{% extends 'drymekPheanstalkBundle::base.html.twig' %}
+{% block header %}
+    <h1>Pheanstalk Manager - put job to "{{ name }}"</h1>
+{% endblock %}
 
-    <input type="submit" />
-</form>
+{% block breadcramb %}
+    &raquo; <a href="{{ path('drymekPheanstalkBundle_tube') }}">home</a>
+    &raquo; <a href="{{ path('drymekPheanstalkBundle_tubeput', {'name': name}) }}">put</a>
+{% endblock %}
+
+{% block body %}
+    <form action="{{ path('drymekPheanstalkBundle_tubeput', {'name': name}) }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+
+        <input class="button" type="submit" value="Put"/>
+    </form>
+{% endblock %}

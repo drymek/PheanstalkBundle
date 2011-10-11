@@ -1,7 +1,9 @@
+<h2>Tube statistics</h2>
+
 <table>
     <tbody>
         {% for key, value in stats %}
-            <tr>
+            <tr class="{{ loop.index is odd ? 'odd' : 'even'}}" >
                 <td>
                     {{ key }}
                 </td>

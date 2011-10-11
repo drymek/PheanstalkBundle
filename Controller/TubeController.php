@@ -7,9 +7,18 @@ use Pheanstalk\Exception\ServerException;
 use drymek\PheanstalkBundle\Entity\Tube;
 use drymek\PheanstalkBundle\Form\TubeType;
 
-
+/**
+ * TubeController 
+ * 
+ * @uses Controller
+ * @package PheanstalkBundle
+ * @author Marcin Dryka <marcin@dryka.pl> 
+ */
 class TubeController extends Controller
 {
+    /**
+     * indexAction List tubes
+     */
     public function indexAction()
     {
         $pheanstalk = $this->get('pheanstalk');
@@ -19,6 +28,9 @@ class TubeController extends Controller
         ));
     }
 
+    /**
+     * createAction Create new tube (form and submit)
+     */
     public function createAction()
     {
         $tube = new Tube();
@@ -40,6 +52,11 @@ class TubeController extends Controller
         ));
     }
 
+    /**
+     * tubeStatsAction display tube statistics
+     * 
+     * @param string $name tube name
+     */
     public function tubeStatsAction($name)
     {
         $pheanstalk = $this->get('pheanstalk');
@@ -58,6 +75,9 @@ class TubeController extends Controller
         ));
     }
 
+    /**
+     * serverStatsAction display server statistics
+     */
     public function serverStatsAction()
     {
         $pheanstalk = $this->get('pheanstalk');

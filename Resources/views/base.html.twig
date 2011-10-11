@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Pheanstalk Manager{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        {% stylesheets
+            '@drymekPheanstalkBundle/Resources/public/css/*'
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    </head>
+    <body>
+        <div id="symfony-wrapper">
+            <div id="symfony-header">
+                {% block header %}{% endblock %}
+                {% block breadcramb %}{% endblock %}
+            </div>
+            <div class="symfony-content">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

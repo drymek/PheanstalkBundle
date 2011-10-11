@@ -1,24 +1,44 @@
-<table>
-    <tbody>
-        {% for tube in tubes %}
-            <tr>
-                <td>
-                    {{ tube }}
-                </td>
-                <td>
-                    <a href="{{ path('drymekPheanstalkBundle_tubejobs', {'name' : tube}) }}">jobs</a>
-                    <a href="{{ path('drymekPheanstalkBundle_tubeput', {'name' : tube}) }}">put</a>
-                </td>
-            </tr>
-        {% endfor %}
-    </tbody>
-    <thead>
-        <tr>
-            <th>Tube name</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-</table>
-<a href="{{ path('drymekPheanstalkBundle_tubecreate') }}">create tube</a>
+{% extends 'drymekPheanstalkBundle::base.html.twig' %}
 
-{% render 'drymekPheanstalkBundle:Tube:serverStats' %}
+{% block header %}
+    <h1>Pheanstalk Manager - tubes list</h1>
+{% endblock %}
+
+{% block breadcramb %}
+    &raquo; <a href="{{ path('drymekPheanstalkBundle_tube') }}">home</a>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <div class="left">
+            <h2>Jobs</h2>
+            <table>
+                <tbody>
+                    {% for tube in tubes %}
+                        <tr>
+                            <td>
+                                {{ tube }}
+                            </td>
+                            <td>
+                                <a href="{{ path('drymekPheanstalkBundle_tubejobs', {'name' : tube}) }}">jobs</a>
+                                <a href="{{ path('drymekPheanstalkBundle_tubeput', {'name' : tube}) }}">put</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>Tube name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="links">
+                <a href="{{ path('drymekPheanstalkBundle_tubecreate') }}">create tube</a>
+            </div>
+        </div>
+        <div class="right">
+            {% render 'drymekPheanstalkBundle:Tube:serverStats' %}
+        </div>
+        <div class="clear"></div>
+{% endblock %}
