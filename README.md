@@ -1,3 +1,7 @@
+## Introduction:
+
+Pheanstalk bundle is simple and easy way to use Pheanstalk2 (namespaced version of Pheanstalk) with Symfony2 applications. It's provide some usefull tool.
+
 ## Install:
 
 deps:
@@ -54,10 +58,10 @@ _pheanstalk:
 ## Developers tools features:
 
 * List tubes 
-* Show tube statistics
-* Put new job to queue
+* Create tube
 * List tube's jobs
 * Delete jobs
+* Put new job to tube
 
 ## Usage example:
 
