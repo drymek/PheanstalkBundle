@@ -5,15 +5,15 @@ namespace drymek\PheanstalkBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
-class JobType extends AbstractType
+class TubeType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('data');
+        $builder->add('name');
     }
 
     public function getName()
     {
-        return 'job';
+        return 'tube';
     }
 }

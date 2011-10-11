@@ -4,13 +4,12 @@ namespace drymek\PheanstalkBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Pheanstalk\Exception\ServerException;
-use drymek\PheanstalkBundle\Entity\Job;
-use drymek\PheanstalkBundle\Form\JobType;
+use drymek\PheanstalkBundle\Entity\Tube;
+use drymek\PheanstalkBundle\Form\TubeType;
 
 
 class TubeController extends Controller
 {
-    const TIMEOUT = 5;
     public function indexAction()
     {
         $pheanstalk = $this->get('pheanstalk');
@@ -20,7 +19,28 @@ class TubeController extends Controller
         ));
     }
 
-    public function showAction($name)
+    public function createAction()
+    {
+        $tube = new Tube();
+
+        $form = $this->createForm(new TubeType(), $tube);
+        $request = $this->get('request');
+
+        if ($request->getMethod() == 'POST') {
+            $form->bindRequest($request);
+            if ($form->isValid()) {
+                $pheanstalk = $this->get('pheanstalk');
+                $pheanstalk->useTube($tube->getName());
+                $pheanstalk->put('create-tube-job');
+                return $this->redirect($this->generateUrl('drymekPheanstalkBundle_tube'));
+            }
+        }
+        return $this->render('drymekPheanstalkBundle:Tube:create.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+
+    public function tubeStatsAction($name)
     {
         $pheanstalk = $this->get('pheanstalk');
         $pheanstalk->useTube($name);
@@ -33,59 +53,18 @@ class TubeController extends Controller
         {
             throw $this->createNotFoundException('The tube does not exist');
         }
-        return $this->render('drymekPheanstalkBundle:Tube:show.html.twig', array(
+        return $this->render('drymekPheanstalkBundle:Tube:tubeStats.html.twig', array(
             'stats' => $stats,
         ));
     }
 
-    public function putAction($name)
+    public function serverStatsAction()
     {
         $pheanstalk = $this->get('pheanstalk');
-        $pheanstalk->useTube($name);
-        
+        $stats = $pheanstalk->stats();
 
-        $job = new Job();
-
-        $form = $this->createForm(new JobType(), $job);
-        $request = $this->get('request');
-
-        if ($request->getMethod() == 'POST') {
-            $form->bindRequest($request);
-            if ($form->isValid()) {
-                $pheanstalk->put($job->getContent());
-                return $this->redirect($this->generateUrl('drymekPheanstalkBundle_tubeshow', array('name' => $name)));
-            }
-        }
-        return $this->render('drymekPheanstalkBundle:Tube:put.html.twig', array(
-            'form' => $form->createView(),
-            'name' => $name,
-        ));
-    }
-
-    public function jobsAction($name)
-    {
-        $pheanstalk = $this->get('pheanstalk');
-        $pheanstalk->useTube($name);
-
-        $jobs = array();
-        while (true) {
-            $job = $pheanstalk->reserve(self::TIMEOUT);
-            if (false === $job) {
-                break;
-            }
-            else {
-                $jobs[] = $job;
-            }
-        }
-        
-        foreach ($jobs as $job)
-        {
-            $pheanstalk->release($job);
-        }
-
-        return $this->render('drymekPheanstalkBundle:Tube:jobs.html.twig', array(
-            'jobs' => $jobs,
-            'name' => $name,
+        return $this->render('drymekPheanstalkBundle:Tube:serverStats.html.twig', array(
+            'stats' => $stats,
         ));
     }
 }

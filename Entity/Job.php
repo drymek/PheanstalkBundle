@@ -4,15 +4,15 @@ namespace drymek\PheanstalkBundle\Entity;
 
 class Job
 {
-    protected $content;
+    protected $data;
 
-    public function getContent()
+    public function getData()
     {
-        return $this->content;
+        return $this->data;
     }
 
-    public function setContent($content)
+    public function setData($data)
     {
-        $this->content = $content;
+        $this->data = $data;
     }
 }

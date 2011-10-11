@@ -1,18 +1,22 @@
 drymekPheanstalkBundle_tube:
-    pattern:  /tube
+    pattern:  /
     defaults: { _controller: drymekPheanstalkBundle:Tube:index }
 
 drymekPheanstalkBundle_tubeshow:
     pattern: /tube/show/{name}
     defaults: { _controller: drymekPheanstalkBundle:Tube:show }
 
+drymekPheanstalkBundle_tubecreate:
+    pattern: /tube/create
+    defaults: { _controller: drymekPheanstalkBundle:Tube:create }
+
 drymekPheanstalkBundle_tubeput:
     pattern: /tube/put/{name}
-    defaults: { _controller: drymekPheanstalkBundle:Tube:put }
+    defaults: { _controller: drymekPheanstalkBundle:Job:put }
 
 drymekPheanstalkBundle_tubejobs:
     pattern: /tube/{name}/jobs
-    defaults: { _controller: drymekPheanstalkBundle:Tube:jobs }
+    defaults: { _controller: drymekPheanstalkBundle:Job:index }
 
 drymekPheanstalkBundle_jobdelete:
     pattern: /tube/{name}/job/{job_id}/delete

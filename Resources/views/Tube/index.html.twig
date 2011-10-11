@@ -6,9 +6,8 @@
                     {{ tube }}
                 </td>
                 <td>
-                    <a href="{{ path('drymekPheanstalkBundle_tubeshow', {'name': tube}) }}">show</a>
-                    <a href="{{ path('drymekPheanstalkBundle_tubeput', {'name' : tube}) }}">put</a>
                     <a href="{{ path('drymekPheanstalkBundle_tubejobs', {'name' : tube}) }}">jobs</a>
+                    <a href="{{ path('drymekPheanstalkBundle_tubeput', {'name' : tube}) }}">put</a>
                 </td>
             </tr>
         {% endfor %}
@@ -20,3 +19,6 @@
         </tr>
     </thead>
 </table>
+<a href="{{ path('drymekPheanstalkBundle_tubecreate') }}">create tube</a>
+
+{% render 'drymekPheanstalkBundle:Tube:serverStats' %}

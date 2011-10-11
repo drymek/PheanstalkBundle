@@ -1,0 +1,32 @@
+<table>
+    <tbody>
+        {% for job in jobs %}
+            <tr>
+                <td>
+                    {{ job.id }}
+                </td>
+                <td>
+                    {{ job.data }}
+                </td>
+                <td>
+                    <a href="{{ path('drymekPheanstalkBundle_jobdelete', {'job_id': job.id, 'name': name}) }}">delete</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">
+                    No jobs found
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Data</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
+
+{% render 'drymekPheanstalkBundle:Tube:tubeStats' with {'name':name} %}
