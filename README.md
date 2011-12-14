@@ -32,7 +32,7 @@ app/autoload.php
 $loader->registerNamespaces(array(
     // (...)
     'Pheanstalk'       => __DIR__.'/../vendor/pheanstalk/classes',
-    'drymek'           => __DIR__.'/../vendor/drymek',
+    'drymek'           => __DIR__.'/../vendor/bundles',
 ));
 
 ```
