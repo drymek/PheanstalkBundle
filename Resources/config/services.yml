@@ -1,6 +1,6 @@
 parameters:
     pheanstalk.class: Pheanstalk\Pheanstalk
-    pheanstalk.server: 127.0.0.1
+    pheanstalk.server: %drymek_pheanstalk.server%
 
 services:
     pheanstalk:

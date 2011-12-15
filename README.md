@@ -37,6 +37,15 @@ $loader->registerNamespaces(array(
 
 ```
 
+app/config/config.yml
+
+```
+
+drymek_pheanstalk:
+    server: 127.0.0.1 
+
+```
+
 ## Service:
 
 Get the Pheanstalk object to work with:
