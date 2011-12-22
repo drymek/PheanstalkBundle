@@ -1,8 +1,0 @@
-parameters:
-    pheanstalk.class: Pheanstalk\Pheanstalk
-    pheanstalk.server: %drymek_pheanstalk.server%
-
-services:
-    pheanstalk:
-        class: %pheanstalk.class%
-        arguments: [%pheanstalk.server%]
