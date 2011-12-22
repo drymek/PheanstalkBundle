@@ -39,10 +39,22 @@ $loader->registerNamespaces(array(
 
 app/config/config.yml
 
+To just use the defaults (server 127.0.0.1, port 11300, timeout 3 seconds):
+
+```
+
+drymek_pheanstalk: ~
+
+```
+
+To configure any, or all, to something other than the defaults, simply add the ones you want:
+
 ```
 
 drymek_pheanstalk:
-    server: 127.0.0.1 
+    server:  YOUR_SERVER
+    port:    YOUR_SERVER_PORT
+    timeout: YOUR_CONNECTION_TIMEOUT_VALUE_IN_SECONDS
 
 ```
 
@@ -66,7 +78,7 @@ _pheanstalk:
 
 ## Developers tools features:
 
-* List tubes 
+* List tubes
 * Create tube
 * List tube's jobs
 * Delete jobs
