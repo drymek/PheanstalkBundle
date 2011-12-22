@@ -22,8 +22,15 @@ class drymekPheanstalkExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.yml');
-        $container->setParameter('drymek_pheanstalk.server', $config['server']);
+        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('services.xml');
+
+        $server     = (array_key_exists('server', $config)) ? $config['server'] : '127.0.0.1';
+        $port       = (array_key_exists('port', $config)) ? $config['port'] : 11300;
+        $timeout    = (array_key_exists('timeout', $config)) ? $config['timeout'] : null;
+
+        $container->setParameter('drymek_pheanstalk.server', $server);
+        $container->setParameter('drymek_pheanstalk.port', $port);
+        $container->setParameter('drymek_pheanstalk.timeout', $timeout);
     }
 }

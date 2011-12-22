@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="pheanstalk.class">Pheanstalk\Pheanstalk</parameter>
+        <parameter key="pheanstalk.server">%drymek_pheanstalk.server%</parameter>
+        <parameter key="pheanstalk.port">%drymek_pheanstalk.port%</parameter>
+        <parameter key="pheanstalk.timeout">%drymek_pheanstalk.timeout%</parameter>
+    </parameters>
+
+    <services>
+        <service id="pheanstalk" class="%pheanstalk.class%">
+            <argument>%pheanstalk.server%</argument>
+            <argument>%pheanstalk.port%</argument>
+            <argument>%pheanstalk.timeout%</argument>
+        </service>
+    </services>
+</container>
