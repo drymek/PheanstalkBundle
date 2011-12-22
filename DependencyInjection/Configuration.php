@@ -22,9 +22,9 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('server')->end()
-                ->scalarNode('port')->end()
-                ->scalarNode('timeout')->end()
+                ->scalarNode('server')->defaultValue('127.0.0.1')->end()
+                ->scalarNode('port')->defaultValue('11300')->end()
+                ->scalarNode('timeout')->defaultValue(null)->end()
             ->end();
         return $treeBuilder;
     }
