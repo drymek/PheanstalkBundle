@@ -11,6 +11,7 @@
         "symfony/event-dispatcher": "*"
     },
     "autoload": {
-        "psr-0": {"drymek\\PheanstalkBundle": ""}
-    }
+        "psr-0": {"drymek": ""}
+    },
+    "target-dir": "drymek/PheanstalkBundle"
 }
