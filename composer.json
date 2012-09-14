@@ -10,4 +10,7 @@
         "mrpoundsign/pheanstalk-5.3": "*",
         "symfony/event-dispatcher": "*"
     }
+    "autoload": {
+        "psr-0": {"drymek\\PheanstalkBundle": ""}
+    }
 }
