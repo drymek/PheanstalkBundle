@@ -1,7 +1,7 @@
 {
-    "name": "drymek/PheanstalkBundle",
+    "name": "drymek/pheanstalk-bundle",
     "type": "symfony-bundle",
-    "description": "A pheanstalk-bundle for Symfony",
+    "description": "A pheanstalk-bundle for Symfony2",
     "keywords": ["beanstalkd", "pheanstalk", "queue"],
     "homepage": "https://github.com/drymek/PheanstalkBundle",
     "require": {
