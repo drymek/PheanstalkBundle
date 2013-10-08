@@ -6,7 +6,7 @@
     "homepage": "https://github.com/drymek/PheanstalkBundle",
     "require": {
         "php": ">=5.3.1",
-        "symfony/symfony": "2.1.*",
+        "symfony/symfony": ">=2.1.*",
         "mrpoundsign/pheanstalk-5.3": "*",
         "symfony/event-dispatcher": "*"
     },
